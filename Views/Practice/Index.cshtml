@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Practice Page";
+}
+@{ int favoriteNumber = 7; }
+@{ string myName = "Alice"; }
+
+<div class="text-center">
+    <h1 class="display-4">
+        My Practice Razor Page
+    </h1>
+    <p>My name is @myName and my favorite number is @favoriteNumber.</p>
+</div>
+
+
+
+@{
+    var today = DateTime.Now.DayOfWeek;
+    var myAnimals = new String[] {"cat", "dog", "bird"};
+    var showButton = true;
+}
+
+<div class="text-center">
+    <p>Today is @today.</p>
+    <p>My favorite animal is a @myAnimals[0]</p>
+</div>
+
+<div class="text-center">
+    @if (showButton) {
+        <button class="btn btn-primary">Click</button>
+    } else {
+        <p>No button for you.</p>
+    }
+</div>
+
+<div class="center-list">
+    <h2>My animals:</h2>
+    <ul>
+        @foreach (var animal in myAnimals)
+        {
+            <li>@animal</li>
+        }
+    </ul>
+</div>
+
